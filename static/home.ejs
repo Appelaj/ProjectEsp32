@@ -1,0 +1,182 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        .matrix-container {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            background-color: #222;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .microchip {
+            position: absolute;
+            left: -50px;
+            width: 40px;
+            height: 150px;
+            background-color: black;
+            border-radius: 5px;
+        }
+
+        .pin-left{
+            position: absolute;
+            width: 20px;
+            height: 5px;
+            background: silver;
+            border-radius: 2px;
+        }
+
+        .pin-left:nth-child(1) { top: 50px; left: -65px; }
+        .pin-left:nth-child(2) { top: 110px; left: -65px; }
+        .pin-left:nth-child(3) { top: 170px; left: -65px; }
+
+
+        .pin-small-left, .pin-small-right {
+            position: absolute;
+            width: 10px;
+            height: 3px;
+            background: gray;
+            border-radius: 2px;
+        }
+
+
+        .matrix {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 5px;
+            padding: 15px;
+            background-color: #333;
+            border-radius: 10px;
+        }
+
+        .matrix input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .submit-container {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .submit-container input {
+            padding: 8px 15px;
+            font-size: 16px;
+            border: none;
+            background-color: #ff5722;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .submit-container input:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+<body>
+    <div class="matrix-container">
+        <div class="pin-left"></div>
+        <div class="pin-left"></div>
+        <div class="pin-left"></div>
+
+        <div class="microchip"></div>
+
+        <form action="/send" method="post">
+            <div class="matrix">
+                <input type="checkbox" name="a1">
+                <input type="checkbox" id="a2" name="a2">
+                <input type="checkbox" id="a3" name="a3">
+                <input type="checkbox" id="a4" name="a4">
+                <input type="checkbox" id="a5" name="a5">
+                <input type="checkbox" id="a6" name="a6">
+                <input type="checkbox" id="a7" name="a7">
+                <input type="checkbox" id="a8" name="a8">
+
+                <input type="checkbox" id="b1" name="b1">
+                <input type="checkbox" id="b2" name="b2">
+                <input type="checkbox" id="b3" name="b3">
+                <input type="checkbox" id="b4" name="b4">
+                <input type="checkbox" id="b5" name="b5">
+                <input type="checkbox" id="b6" name="b6">
+                <input type="checkbox" id="b7" name="b7">
+                <input type="checkbox" id="b8" name="b8">
+
+                <input type="checkbox" id="c1" name="c1">
+                <input type="checkbox" id="c2" name="c2">
+                <input type="checkbox" id="c3" name="c3">
+                <input type="checkbox" id="c4" name="c4">
+                <input type="checkbox" id="c5" name="c5">
+                <input type="checkbox" id="c6" name="c6">
+                <input type="checkbox" id="c7" name="c7">
+                <input type="checkbox" id="c8" name="c8">
+
+                <input type="checkbox" id="d1" name="d1">
+                <input type="checkbox" id="d2" name="d2">
+                <input type="checkbox" id="d3" name="d3">
+                <input type="checkbox" id="d4" name="d4">
+                <input type="checkbox" id="d5" name="d5">
+                <input type="checkbox" id="d6" name="d6">
+                <input type="checkbox" id="d7" name="d7">
+                <input type="checkbox" id="d8" name="d8">
+
+                <input type="checkbox" id="e1" name="e1">
+                <input type="checkbox" id="e2" name="e2">
+                <input type="checkbox" id="e3" name="e3">
+                <input type="checkbox" id="e4" name="e4">
+                <input type="checkbox" id="e5" name="e5">
+                <input type="checkbox" id="e6" name="e6">
+                <input type="checkbox" id="e7" name="e7">
+                <input type="checkbox" id="e8" name="e8">
+
+                <input type="checkbox" id="f1" name="f1">
+                <input type="checkbox" id="f2" name="f2">
+                <input type="checkbox" id="f3" name="f3">
+                <input type="checkbox" id="f4" name="f4">
+                <input type="checkbox" id="f5" name="f5">
+                <input type="checkbox" id="f6" name="f6">
+                <input type="checkbox" id="f7" name="f7">
+                <input type="checkbox" id="f8" name="f8">
+
+                <input type="checkbox" id="g1" name="g1">
+                <input type="checkbox" id="g2" name="g2">
+                <input type="checkbox" id="g3" name="g3">
+                <input type="checkbox" id="g4" name="g4">
+                <input type="checkbox" id="g5" name="g5">
+                <input type="checkbox" id="g6" name="g6">
+                <input type="checkbox" id="g7" name="g7">
+                <input type="checkbox" id="g8" name="g8">
+
+                <input type="checkbox" id="h1" name="h1">
+                <input type="checkbox" id="h2" name="h2">
+                <input type="checkbox" id="h3" name="h3">
+                <input type="checkbox" id="h4" name="h4">
+                <input type="checkbox" id="h5" name="h5">
+                <input type="checkbox" id="h6" name="h6">
+                <input type="checkbox" id="h7" name="h7">
+                <input type="checkbox" id="h8" name="h8">
+            </div>
+            
+            <div class="submit-container">
+                <input type="submit" value="submit">
+            </div>
+        </form>
+    </div>
+</body>
